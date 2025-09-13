@@ -1,5 +1,9 @@
+import SideBar from "./SideBar";
+
 export default function Utilisateurs(){
-     return (
-        <div></div>
+return (
+   <div className="">
+           <SideBar/>
+        </div>
      )
 }

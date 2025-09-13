@@ -1,5 +1,9 @@
+import SideBar from "./SideBar";
+
 export default function Controle() {
     return (
-        <div></div>
+        <div>
+            <SideBar/>
+        </div>
     )
 }

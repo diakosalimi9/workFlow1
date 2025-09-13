@@ -1,7 +1,9 @@
-import { BrowserRouter } from "react-router-dom"
+import { BrowserRouter , Routes , Route } from "react-router-dom"
 import Loging from "./pages/Loging"
 import Base from "./pages/Base"
 import Controle from "./pages/Controle"
+import Utilisateurs from "./pages/Utilisateurs"
+import Coming from "./pages/Coming"
 
 function App() {
 
@@ -12,6 +14,7 @@ function App() {
         <Route path={`/utilisateurs`} element={<Utilisateurs />} />
         <Route path={'/base'} element={<Base />} />
         <Route path={'/controle'} element={<Controle />} />
+        <Route path={'/coming'} element={<Coming/>} />
       </Routes>
     </BrowserRouter>
   )
