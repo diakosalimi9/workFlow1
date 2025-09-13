@@ -12,3 +12,4 @@ export const useLocalStorage = (key, defaultValue) => {
     }, [key, localStorafeValue])
     return [localStorafeValue, seLocalStorafeValue]
 }
+// const [s,sets]=useLocalStorage("hhh",lll)
