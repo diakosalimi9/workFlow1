@@ -59,6 +59,6 @@ export default function Icon({name}){
 
             
         default:
-            return null;
+            // console.log("kkkkkh");
     }
 }

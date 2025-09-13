@@ -1,6 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer base {
+  @font-face {
+    font-family: 'InterMedium';
+
+    src: url(/font/Inter-Medium.woff) format('woff2');
+  }
+  .errortextfield{
+    @apply text-red-800
+  }
+  .errorfield{
+    @apply text-red-800 border-red-800 border 
+  }
+}
 
 .active{
    background-color: #4256D0;
