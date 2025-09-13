@@ -55,6 +55,22 @@ export default function Icon({name}){
             return <svg width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M14.6706 8.47738C14.4596 8.68828 14.1736 8.80676 13.8752 8.80676C13.5769 8.80676 13.2908 8.68828 13.0799 8.47738L7.51112 2.90863L1.94236 8.47738C1.73019 8.68231 1.44601 8.7957 1.15104 8.79314C0.856067 8.79057 0.573902 8.67226 0.365318 8.46367C0.156734 8.25509 0.0384207 7.97293 0.0358572 7.67795C0.0332937 7.38298 0.146688 7.09881 0.351616 6.88663L6.71574 0.522503C6.92671 0.311598 7.21281 0.193118 7.51112 0.193118C7.80942 0.193118 8.09552 0.311598 8.30649 0.522503L14.6706 6.88663C14.8815 7.0976 15 7.38369 15 7.682C15 7.98031 14.8815 8.26641 14.6706 8.47738Z" fill="white"/>
 </svg>
+        case 'notification':
+            return <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M16 7C16 5.4087 15.3679 3.88258 14.2426 2.75736C13.1174 1.63214 11.5913 1 10 1C8.4087 1 6.88258 1.63214 5.75736 2.75736C4.63214 3.88258 4 5.4087 4 7C4 14 1 16 1 16H19C19 16 16 14 16 7Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M11.73 20C11.5542 20.3031 11.3019 20.5547 10.9982 20.7295C10.6946 20.9044 10.3504 20.9965 10 20.9965C9.64964 20.9965 9.30541 20.9044 9.00179 20.7295C8.69818 20.5547 8.44583 20.3031 8.27002 20" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+        case 'search':
+            return <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.1111 15.2222C12.0385 15.2222 15.2222 12.0385 15.2222 8.1111C15.2222 4.18375 12.0385 1 8.1111 1C4.18375 1 1 4.18375 1 8.1111C1 12.0385 4.18375 15.2222 8.1111 15.2222Z" stroke="#18181B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M17 16.9999L13.1333 13.1332" stroke="#18181B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+        case 'plus':
+            return <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M6 1V11" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1 6H11" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
 
 
             
