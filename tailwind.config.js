@@ -7,7 +7,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'InterMedium': ['InterMedium']
+        'InterMedium': ['InterMedium'],
+        'InterLight':['InterLight']
       }
     },
   },
