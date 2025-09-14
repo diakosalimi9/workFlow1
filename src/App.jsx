@@ -1,7 +1,8 @@
-import { BrowserRouter } from "react-router-dom"
+import { BrowserRouter, Route, Routes } from "react-router-dom"
 import Loging from "./pages/Loging"
 import Base from "./pages/Base"
 import Controle from "./pages/Controle"
+import Utilisateurs from "./pages/Utilisateurs"
 
 function App() {
 
@@ -12,6 +13,8 @@ function App() {
         <Route path={`/utilisateurs`} element={<Utilisateurs />} />
         <Route path={'/base'} element={<Base />} />
         <Route path={'/controle'} element={<Controle />} />
+        <Route index element={<Loging />} />
+
       </Routes>
     </BrowserRouter>
   )
