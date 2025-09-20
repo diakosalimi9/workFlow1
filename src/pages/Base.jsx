@@ -6,8 +6,8 @@ import ModaleEdit from "../component/ui/organism/modalEdit/ModaleEdit";
 export default function Base() {
 
     return (
-        <div className="w-full flex bg-[#FAFAFA]">
-            <div className="flex flex-col w-full ml-[15%]">
+        <div className="w-full flex  bg-[#FAFAFA]">
+            <div className="flex flex-col w-full ">
                 <BaseCountries />
                 <div className="w-full flex gap-1 ">
                     <ListCities />

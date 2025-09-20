@@ -1,7 +1,5 @@
 import Modal from 'react-modal';
-import Span from '../../atom/span/Span';
 import Button from '../../atom/button/Button';
-import Icon from '../../atom/icon/Icon';
 import { useEdit } from '../../../../context/EditItemContext';
 import H2 from '../../atom/h2/H2';
 import Input from '../../atom/input/Input';
