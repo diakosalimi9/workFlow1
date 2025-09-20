@@ -12,12 +12,33 @@
 
     src: url(/font/Inter-Light-BETA.woff) format('woff2');
   }
+  @font-face {
+    font-family: 'InterSemiBold';
+    src: url(/font/Inter-SemiBold.woff) format('woff2');
+  }
+  @font-face {
+    font-family: "InterRegular";
+    src: url(/font/Inter-Regular.woff) format('woff2');
+  }
   .errortextfield{
     @apply text-red-800
   }
   .errorfield{
     @apply text-red-800 border-red-800 border 
   }
+  .sv svg{
+    @apply mt-1
+  }
+  .paginate li{
+    @apply border w-[42px] h-[38px] 
+  }
+  .paginate li a{
+    @apply w-full h-full flex justify-center items-center
+  }
+}
+.activepaginate{
+  background-color: #4256D0;
+  color: white;
 }
 
 .active{

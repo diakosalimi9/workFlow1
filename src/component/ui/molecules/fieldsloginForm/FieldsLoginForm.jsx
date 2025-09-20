@@ -1,5 +1,5 @@
 // import { useLocalStorage } from "../../../../hooks/useLocalStorage";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Icon from "../../atom/icon/Icon";
 import Input from "../../atom/input/Input";
 import P from "../../atom/p/P";
@@ -7,12 +7,24 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import Button from "../../atom/button/Button";
 import { Link, useNavigate } from "react-router-dom";
-import { useradmins, users } from "../../../../Chore/Array/Array";
+import { users } from "../../../../Chore/Array/Array";
 import { useLocalStorage } from "../../../../hooks/useLocalStorage";
+import { fakeLogin } from "../../../../services/AuthServices";
+import { AuthContextt } from "../../../../context/AuthContext";
 
 export default function FieldsLoginForm() {
-    const [user, setUser] = useLocalStorage("users", users)
+    const {login}= useContext(AuthContextt)
+    const [userss, setUser] = useLocalStorage("users", users)
     const [activeField, setActiveField] = useState(null)
+    // const loggedInUser = userss.find((u) => u.islogin === true);
+
+    // if (!loggedInUser) {
+    //     return <Navigate to="/" replace />;
+    // }
+
+    // if ( loggedInUser.role !== "admin") {
+    //     return <Navigate to="/" replace />;
+    // }
     const Navigate = useNavigate()
     const formik = useFormik({
         initialValues: {
@@ -27,19 +39,43 @@ export default function FieldsLoginForm() {
                 .min(8, "Minimum 8 characters")
                 .required("Required!"),
         }),
-        onSubmit: (e, values) => {
-            console.log(useradmins);
-            user.map((item) => {
-                formik.values.Email === item.email && formik.values.password === item.password && item.role === "admin" ? user.find((i) => i.email === formik.values.Email && i.password === formik.values.password && i.role === "admin" ? setUser([]) :"") : alert("ورود کردید");
-            })
+        onSubmit: async (values) => {
+            const user = userss.find(
+                (i) => i.email === values.Email && i.password === values.password
+            );
+
+            // if (!user) {
+            //     alert("ایمیل یا رمز عبور اشتباه است");
+            //     return;
+            // }
+            // const updatedUsers = userss.map((u) =>
+            //     u.email === user.email ? { ...u, islogin: true } : u
+            // );
+            // setUser(updatedUsers);
+            // if (user.role === "admin") {
+            //     Navigate("/base");
+            // } else {
+
+            //     alert("✅ ورود کردید");
+            // }
+            try {
+                const data = await fakeLogin(user)
+                login(data.token,data.role)
+                console.log(data);
+                
+            } catch (error) {
+                console.log(error.message);
+                setTimeout(() => {
+                    // Navigate('/signup')
+                }, 1000);
+            }
         }
     });
 
     return (
         <div className=" flex flex-col gap-8">
-            <div className="flex flex-col gap-1 items-center">
-                <Icon name="h" />
-                <div className="w-[200px] h-[44px] bg-black"></div>
+            <div className="flex flex-col items-center gap-2">
+                <Icon name="logo2" />
                 <P className={`font-InterMedium font-medium text-[#000] text-[20px]`}>Merci d'entrer vos informations de connexion</P>
             </div>
             <div>

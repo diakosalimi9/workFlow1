@@ -16,10 +16,10 @@ const SideBarSelect = [
     { id: 2, title: 'Base', navlink: '/base' },
     { id: 3, title: 'Contrôle', navlink: '/controle' },
     { id: 4, title: 'Workflow', navlink: '/coming' },
-    { id: 5, title: 'Alertes', navlink: '/coming' },
-    { id: 6, title: 'Rôles', navlink: '/coming' },
-    { id: 7, title: 'Préferences', navlink: '/coming' },
-    { id: 8, title: 'Calendrier', navlink: '/coming' },
+    { id: 5, title: 'Alertes', navlink: '/comin' },
+    { id: 6, title: 'Rôles', navlink: '/comi' },
+    { id: 7, title: 'Préferences', navlink: '/com' },
+    { id: 8, title: 'Calendrier', navlink: '/co' },
 ]
 export default function SideBar() {
     const [select, setSelect] = useState(false)
@@ -33,7 +33,7 @@ export default function SideBar() {
         }
     }
     return (
-        <div className="h-full">
+        <div className="h-screen fixed">
             <div>
                 <div className="bg-[#0E1B6B] w-56 flex justify-center items-center gap-3 h-[60px] ">
                     <div>
@@ -43,7 +43,7 @@ export default function SideBar() {
                         <Icon name={'logo'} />
                     </div>
                 </div>
-                <div className="bg-gradient-to-b from-[#131C55] via-[#4357d5] to-[#131C5559]  w-56  to-inherit-[] h-[677px] ">
+                <div className="bg-gradient-to-b from-[#131C55] via-[#4357d5] to-[#131C5559]  w-56  to-inherit-[] h-screen ">
                     {SideBarArray.map((item, index) => (
                         <>
                             <Button className="flex justify-center items-center gap-16 pt-5 " onClick={() => handleClick(item)} >
@@ -63,13 +63,13 @@ export default function SideBar() {
                                             <>
                                                 <div className=" w-48 ml-4  ">
                                                     <NavLink to={item.navlink} >
-                                                        {({isActive})=>(
-                                                        <P className={isActive ? 'active all':'all'}>{item.title}</P>
+                                                        {({ isActive }) => (
+                                                            <P className={isActive ? 'active all' : 'all'}>{item.title}</P>
                                                         )}
                                                     </NavLink>
                                                 </div>
                                             </>
-                                        )) 
+                                        ))
                                         }
                                     </div>
                                 )}
