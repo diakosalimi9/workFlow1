@@ -28,8 +28,8 @@ export default function Listedes() {
     
     return (
         <>
-            <div>
-                <div className='mt-7'>
+            <div className='w-full'>
+                <div className='mt-7 '>
                     <div>
                         <H1 className={`text-2xl font-InterReguler font-semibold`}>Configuration</H1>
                     </div>

@@ -20,7 +20,7 @@ export default function SideBarArrayAll() {
         }
     }
     return (
-        <div className="h-full">
+        <div className="h-max">
             <div>
                 <div className="bg-[#0E1B6B] w-56 flex justify-center items-center gap-3 h-[60px] ">
                     <div>
