@@ -1,27 +1,14 @@
-import { useState } from "react";
-import Icon from "../component/ui/atom/icon/Icon";
-import P from '../component/ui/atom/p/P'
-import Button from '../component/ui/atom/button/Button'
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+import { SideBarArray } from "../../../../Chore/Array/SideBarArray";
+import { SideBarSelect } from "../../../../Chore/Array/SideBarSelect";
+import Icon from "../../atom/icon/Icon";
+import Button from "../../atom/button/Button";
+import P from "../../atom/p/P";
 
-const SideBarArray = [
-    { id: 1, title: 'Configuration', icon: 'setting', iconup: 'up', icondown: 'down', select: true },
-    { id: 2, title: 'Dossier', icon: 'folder', iconup: 'up', icondown: 'down', select: false },
-    { id: 3, title: 'Projet', icon: 'project', iconup: 'up', icondown: 'down', select: false },
-    { id: 4, title: 'DirectionTechnique', icon: 'object', iconup: 'up', icondown: 'down', select: false },
-    { id: 5, title: 'Protection', icon: 'protection', iconup: 'up', icondown: 'down', select: false },
-]
-const SideBarSelect = [
-    { id: 1, title: 'Utilisateurs', navlink: '/utilisateurs' },
-    { id: 2, title: 'Base', navlink: '/base' },
-    { id: 3, title: 'Contrôle', navlink: '/controle' },
-    { id: 4, title: 'Workflow', navlink: '/coming' },
-    { id: 5, title: 'Alertes', navlink: '/coming' },
-    { id: 6, title: 'Rôles', navlink: '/coming' },
-    { id: 7, title: 'Préferences', navlink: '/coming' },
-    { id: 8, title: 'Calendrier', navlink: '/coming' },
-]
-export default function SideBar() {
+
+
+export default function SideBarArrayAll() {
     const [select, setSelect] = useState(false)
     const [navlink, setNavlink] = useState(null)
 
@@ -45,7 +32,7 @@ export default function SideBar() {
                 </div>
                 <div className="bg-gradient-to-b from-[#131C55] via-[#4357d5] to-[#131C5559]  w-56  to-inherit-[] h-[677px] ">
                     {SideBarArray.map((item, index) => (
-                        <>
+                        <React.Fragment key={index}>
                             <Button className="flex justify-center items-center gap-16 pt-5 " onClick={() => handleClick(item)} >
                                 <div className="flex justify-center items-center gap-2 ml-3  ">
                                     <Icon name={item.icon} />
@@ -74,7 +61,7 @@ export default function SideBar() {
                                     </div>
                                 )}
                             </div>
-                        </>
+                        </React.Fragment>
                     ))}
                 </div>
             </div>

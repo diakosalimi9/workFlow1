@@ -5,7 +5,7 @@ import Button from '../component/ui/atom/button/Button'
 import { users } from '../Chore/Array/Array'
 import { HeaderTitle } from '../Chore/Array/HeaderTitle'
 import P from '../component/ui/atom/p/P'
-import { useState } from 'react'
+import React, { useState } from 'react'
 import ReactPaginate from 'react-paginate'
 import { Link } from 'react-router-dom'
 import {useLocalStorage} from '../hooks/useLocalStorage'
@@ -42,7 +42,7 @@ export default function Listedes() {
                     </div>
                     <div className='flex ml-8 mt-12 w-[1100px]  '>
                         {HeaderTitle.map((item, index) => (
-                            <>
+                            <React.Fragment key={index}>
                                 <div className='flex'>
                                     <div className='flex  gap-36'>
                                         <P className={'flex w-[60px] '}>{item.name}</P>
@@ -53,12 +53,12 @@ export default function Listedes() {
                                         <P className={'flex w-[60px] '}>{item.action}</P>
                                     </div>
                                 </div>
-                            </>
+                            </React.Fragment>
                         ))}
                     </div>
                     <div className='flex justify-start items-start gap-7 flex-col mt-7 w-[1100px] ml-8'>
                         {CourrentPage.map((item, index) => (
-                            <>
+                            <React.Fragment key={index}>
                                 <div className='flex justify-start items-start  gap-[144px] pb-6 border-b w-[1100px] border-[#F4F4F5]'>
                                     <div className='flex w-[60px] InterLight font-normal text-sm text-[#27272A]'>
                                         <P>{item.name}</P>
@@ -80,7 +80,7 @@ export default function Listedes() {
                                         <Button onClick={()=>removeHandle(item)} className={'bg-[#DC2626] text-[#FFFFFF] rounded-xl InterLight font-medium text-xs p-[7px]'}><Link>Supprimer</Link> </Button>
                                     </div>
                                 </div>
-                            </>
+                            </React.Fragment>
                         ))}
                     </div>
                     <div className="mt-7 mb-7">
