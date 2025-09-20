@@ -7,11 +7,11 @@ import Coming from "./pages/Coming"
 import SignUp from "./pages/SignUp"
 import ForgettonPassword from "./pages/ForgettonPassword"
 import Layout from "./component/partial/Layout/Layout"
-import Edit from "./component/ui/organism/edit/Edit"
 import EditItemContext from "./context/EditItemContext"
 import { AuthProvider } from "./context/AuthContext"
 import Homepage from "./pages/Homepage"
 import ProtectedRout from "./pages/ProtectedRout"
+import Edit from "./component/ui/organism/edit/Edit"
 
 function App() {
 
@@ -43,6 +43,7 @@ function App() {
               <Route path={'/base'} element={<ProtectedRout role={'admin'}>
                 <Base />
               </ProtectedRout>} />
+              <Route path="/utilisateurs/:id" element={<Edit/>}/>
             </Routes>
           </Layout>
         </BrowserRouter>
