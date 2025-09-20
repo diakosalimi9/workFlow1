@@ -8,7 +8,6 @@ import * as Yup from "yup";
 import Button from "../../atom/button/Button";
 import { Link, useNavigate } from "react-router-dom";
 import { users } from "../../../../Chore/Array/Array";
-import { users } from "../../../../Chore/Array/Array";
 import { useLocalStorage } from "../../../../hooks/useLocalStorage";
 import { fakeLogin } from "../../../../services/AuthServices";
 import { AuthContextt } from "../../../../context/AuthContext";
