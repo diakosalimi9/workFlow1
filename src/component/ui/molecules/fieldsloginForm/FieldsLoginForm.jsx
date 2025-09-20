@@ -7,7 +7,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import Button from "../../atom/button/Button";
 import { Link, useNavigate } from "react-router-dom";
-import { useradmins, users } from "../../../../Chore/Array/Array";
+import { users } from "../../../../Chore/Array/Array";
 import { useLocalStorage } from "../../../../hooks/useLocalStorage";
 
 export default function FieldsLoginForm() {
@@ -28,10 +28,9 @@ export default function FieldsLoginForm() {
                 .required("Required!"),
         }),
         onSubmit: (e, values) => {
-            console.log(useradmins);
-            user.map((item) => {
-                formik.values.Email === item.email && formik.values.password === item.password && item.role === "admin" ? user.find((i) => i.email === formik.values.Email && i.password === formik.values.password && i.role === "admin" ? setUser([]) :"") : alert("ورود کردید");
-            })
+            // user.map((item) => {
+            //     formik.values.Email === item.email && formik.values.password === item.password && item.role === "admin" ? user.find((i) => i.email === formik.values.Email && i.password === formik.values.password && i.role === "admin" ? setUser([]) :"") : alert("ورود کردید");
+            // })
         }
     });
 
