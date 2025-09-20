@@ -8,7 +8,14 @@ export default {
     extend: {
       fontFamily: {
         'InterMedium': ['InterMedium'],
-        'InterLight':['InterLight']
+        'InterLight': ['InterLight'],
+        'InterSemiBold': ['InterSemiBold'],
+        'InterRegular': ['InterRegular'],
+
+      },
+      flex: {
+        "25%":"0 0 25%",
+        "33%":"0 0 33%",
       }
     },
   },

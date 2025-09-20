@@ -1,17 +1,19 @@
-import H1 from "../component/ui/atom/h1/H1";
+import BaseCountries from "../component/ui/organism/BaseCountries/BaseCountries";
+import ListCities from "../component/ui/organism/ListCities/ListCities";
+import LIstMethodes from "../component/ui/organism/LIstMethodes/LIstMethodes";
+import ModaleEdit from "../component/ui/organism/modalEdit/ModaleEdit";
 
 export default function Base() {
-    return (
-        <div className="flex">
-            <div>
-            </div>
-            <div className="mt-7 ml-10">
-                <div className="mt-10">
-                    <H1 className={'text-3xl font-InterLight font-semibold'}>Base</H1>
-                </div>
-                <div className="mt-10 ml-8">
 
+    return (
+        <div className="w-full flex bg-[#FAFAFA]">
+            <div className="flex flex-col w-full ml-[15%]">
+                <BaseCountries />
+                <div className="w-full flex gap-1 ">
+                    <ListCities />
+                    <LIstMethodes />
                 </div>
+                <ModaleEdit />
             </div>
         </div>
     )
