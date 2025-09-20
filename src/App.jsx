@@ -6,6 +6,7 @@ import Utilisateurs from "./pages/Utilisateurs"
 import Coming from "./pages/Coming"
 import SignUp from "./pages/SignUp"
 import ForgettonPassword from "./pages/ForgettonPassword"
+import Edit from "./pages/Edit"
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
         <Route path={'/base'} element={<Base />} />
         <Route path={'/controle'} element={<Controle />} />
         <Route path={'/coming'} element={<Coming/>} />
+        <Route path="/utilisateurs/:id" element={<Edit/>}/>
       </Routes>
     </BrowserRouter>
   )
