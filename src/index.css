@@ -13,12 +13,12 @@
     src: url(/font/Inter-Light-BETA.woff) format('woff2');
   }
   @font-face {
-    font-family: 'InterSemiBold';
-    src: url(/font/Inter-SemiBold.woff) format('woff2');
+    font-family: 'InterReguler';
+    src: url(/font/Inter-Regular.woff) format('woff2');
   }
   @font-face {
-    font-family: "InterRegular";
-    src: url(/font/Inter-Regular.woff) format('woff2');
+    font-family: 'InterSemiBold';
+    src: url(/font/Inter-SemiBold.woff) format('woff2');
   }
   .errortextfield{
     @apply text-red-800
