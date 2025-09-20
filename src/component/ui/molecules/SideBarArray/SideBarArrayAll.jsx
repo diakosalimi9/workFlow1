@@ -1,9 +1,12 @@
-import { useState } from "react";
-import Icon from "../component/ui/atom/icon/Icon";
-import P from '../component/ui/atom/p/P'
-import Button from '../component/ui/atom/button/Button'
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+import { SideBarArray } from "../../../../Chore/Array/SideBarArray";
+import { SideBarSelect } from "../../../../Chore/Array/SideBarSelect";
+import Icon from "../../atom/icon/Icon";
+import Button from "../../atom/button/Button";
+import P from "../../atom/p/P";
 
+<<<<<<< HEAD:src/pages/SideBar.jsx
 const SideBarArray = [
     { id: 1, title: 'Configuration', icon: 'setting', iconup: 'up', icondown: 'down', select: true },
     { id: 2, title: 'Dossier', icon: 'folder', iconup: 'up', icondown: 'down', select: false },
@@ -22,6 +25,11 @@ const SideBarSelect = [
     { id: 8, title: 'Calendrier', navlink: '/co' },
 ]
 export default function SideBar() {
+=======
+
+
+export default function SideBarArrayAll() {
+>>>>>>> 69ddbbc6fde57476cd34441e70513ea1989b1487:src/component/ui/molecules/SideBarArray/SideBarArrayAll.jsx
     const [select, setSelect] = useState(false)
     const [navlink, setNavlink] = useState(null)
 
@@ -45,7 +53,7 @@ export default function SideBar() {
                 </div>
                 <div className="bg-gradient-to-b from-[#131C55] via-[#4357d5] to-[#131C5559]  w-56  to-inherit-[] h-screen ">
                     {SideBarArray.map((item, index) => (
-                        <>
+                        <React.Fragment key={index}>
                             <Button className="flex justify-center items-center gap-16 pt-5 " onClick={() => handleClick(item)} >
                                 <div className="flex justify-center items-center gap-2 ml-3  ">
                                     <Icon name={item.icon} />
@@ -74,7 +82,7 @@ export default function SideBar() {
                                     </div>
                                 )}
                             </div>
-                        </>
+                        </React.Fragment>
                     ))}
                 </div>
             </div>
