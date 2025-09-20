@@ -5,7 +5,7 @@ import { AuthContextt } from '../context/AuthContext'
 export default function Homepage() {
     const {logout} = useContext(AuthContextt)
   return (
-    <div>
+    <div className='ml-[50%] w-full h-[100px] bg-black'>
       <h1>Homepage</h1>
       <Button onClick={()=>logout()}>logout</Button>
     </div>

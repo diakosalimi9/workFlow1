@@ -7,8 +7,6 @@ import Button from "../../atom/button/Button";
 import P from "../../atom/p/P";
 
 
-
-
 export default function SideBarArrayAll() {
     const [select, setSelect] = useState(false)
     const [navlink, setNavlink] = useState(null)
@@ -21,7 +19,7 @@ export default function SideBarArrayAll() {
         }
     }
     return (
-        <div className="h-max">
+        <div className="h-screen fixed ">
             <div>
                 <div className="bg-[#0E1B6B] w-56 flex justify-center items-center gap-3 h-[60px] ">
                     <div>
