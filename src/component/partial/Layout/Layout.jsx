@@ -1,9 +1,11 @@
+import { useLocation } from "react-router-dom";
 import Header from "../../ui/organism/header/Header";
 import SideBar from "../../ui/organism/sideBar/SideBar";
 
 export default function Layout({children}){
+    const Location = useLocation()
     return(
-        <div className="flex">
+        <div className={`${Location.pathname === "/login" && Location.pathname === "/sigin" && ""} flex`}>
             <div>
             <SideBar/>
             </div>

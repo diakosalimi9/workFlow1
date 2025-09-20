@@ -21,7 +21,7 @@ function App() {
         <BrowserRouter>
           <Layout>
             <Routes>
-              <Route path="/" element={<ProtectedRout role={'user'}>
+              <Route index element={<ProtectedRout role={'user'}>
                 <Homepage />
               </ProtectedRout>} />
               <Route path="/login" element={<Loging />} />
