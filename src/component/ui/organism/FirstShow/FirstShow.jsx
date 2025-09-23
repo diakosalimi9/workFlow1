@@ -1,6 +1,5 @@
-import { FirstArray } from "../../../../Chore/Array/FirstArray"
 import { ActiveBtn } from "../../../../context/ActiveButtonControle"
-
+import {FirstArray} from '../../../../Chore/Array/FirstArray'
 
 export default function FirstShow(){
     const {active} = ActiveBtn()
