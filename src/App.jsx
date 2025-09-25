@@ -12,11 +12,13 @@ import { AuthProvider } from "./context/AuthContext"
 import Homepage from "./pages/Homepage"
 import ProtectedRout from "./pages/ProtectedRout"
 import Edit from "./component/ui/organism/edit/Edit"
+import ActiveButtonControl from "./context/ActiveButtonControle"
 
 function App() {
 
   return (
     <AuthProvider>
+      <ActiveButtonControl>
       <EditItemContext>
         <BrowserRouter>
           <Layout>
@@ -48,6 +50,7 @@ function App() {
           </Layout>
         </BrowserRouter>
       </EditItemContext>
+      </ActiveButtonControl>
     </AuthProvider>
   )
 }
