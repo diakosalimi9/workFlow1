@@ -18,7 +18,7 @@ export default function HeaderAll() {
     const titlePage = Pages[Location.pathname] || ""
     return (
         <>
-            <div className="flex justify-center items-center">
+            <div className="w-full flex justify-center items-center">
                 {Location.pathname === '/utilisateurs' && (
                     <>
                         <div className="flex justify-center items-center">

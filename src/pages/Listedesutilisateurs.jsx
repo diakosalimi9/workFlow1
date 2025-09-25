@@ -5,12 +5,14 @@ import Button from '../component/ui/atom/button/Button'
 import { users } from '../Chore/Array/Array'
 import { HeaderTitle } from '../Chore/Array/HeaderTitle'
 import P from '../component/ui/atom/p/P'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import ReactPaginate from 'react-paginate'
 import { Link } from 'react-router-dom'
 import {useLocalStorage} from '../hooks/useLocalStorage'
 export default function Listedes() {
-    const [items , seItems] = useLocalStorage("myitems",users);
+    useEffect(()=>{
+        const [items , seItems] = useLocalStorage("myitems",users);
+    },[])
     const [page, setPage] = useState(0)
     const AllPage = 4
     const End = page + AllPage

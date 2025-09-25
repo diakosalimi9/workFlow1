@@ -2,18 +2,22 @@ import { useLocation } from "react-router-dom";
 import Header from "../../ui/organism/header/Header";
 import SideBar from "../../ui/organism/sideBar/SideBar";
 
-export default function Layout({children}){
+export default function Layout({ children }) {
     const Location = useLocation()
-    return(
-        <div className={`${Location.pathname === "/login" && Location.pathname === "/sigin" && ""} flex`}>
-            <div>
-            <SideBar/>
+    console.log(Location.pathname);
+
+    return (
+        <div className={`w-full flex justify-end bg-[#FAFAFA]`}>
+            <div className={`${Location.pathname === "/login" || Location.pathname === "/signup"|| Location.pathname === "/"? "hidden" : "flex"} w-[265px]`}>
+                <SideBar />
             </div>
-            <div>
-                <div className="ml-9 pt-8">
-                <Header/>
+            <div className="w-full ">
+                <div className={`${Location.pathname === "/login" || Location.pathname === "/sigin"||Location.pathname === "/" ? "hidden" : "flex"} pl-8 pt-8`}>
+                    <Header />
                 </div>
-                {children}
+                <div className="w-full">
+                    {children}
+                </div>
             </div>
         </div>
     )

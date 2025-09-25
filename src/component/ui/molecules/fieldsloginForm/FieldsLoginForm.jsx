@@ -66,7 +66,7 @@ export default function FieldsLoginForm() {
             } catch (error) {
                 console.log(error.message);
                 setTimeout(() => {
-                    // Navigate('/signup')
+                    Navigate('/signup')
                 }, 1000);
             }
         }

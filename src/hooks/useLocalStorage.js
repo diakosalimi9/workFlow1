@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 export const useLocalStorage = (key, defaultValue) => {
     const [localStorafeValue, seLocalStorafeValue] = useState(() => {
         const data = localStorage.getItem(key)
-        const initialValue = JSON.parse(data)
+        const initialValue = JSON.parse(data) || []
         return initialValue || defaultValue
     })
     useEffect(() => {

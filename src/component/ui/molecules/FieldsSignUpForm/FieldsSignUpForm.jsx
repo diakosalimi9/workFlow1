@@ -5,7 +5,7 @@ import P from "../../atom/p/P";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import Button from "../../atom/button/Button";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Span from "../../atom/span/Span";
 import { useLocalStorage } from "../../../../hooks/useLocalStorage";
 import { users } from "../../../../Chore/Array/Array";
@@ -13,9 +13,7 @@ import { users } from "../../../../Chore/Array/Array";
 export default function FieldsSignUpForm() {
     const [userss, setUser] = useLocalStorage("users", users)
     const [activeField, setActiveField] = useState(null)
-    function h() {
-
-    }
+    const Navigate = useNavigate()
     const formik = useFormik({
         initialValues: {
             Email: "",
@@ -42,9 +40,12 @@ export default function FieldsSignUpForm() {
         }),
         onSubmit: (values) => {
             console.log(values);
-            
-            setUser(prev => ([...prev, { name: Date.now(), email:values.Email, numberphone:values.numberphone,password:values.password,islogin:true,role:"user" }]))
-
+            const f = userss.find((i)=>i.email === values.Email && i.password === values.password)
+            if (f) {
+                Navigate('/login')
+            }else{
+                setUser(prev => ([...prev, { name: Date.now(), email:values.Email, numberphone:values.numberphone,password:values.password,islogin:true,role:"user" }]))
+            }
         }
     });
     console.log(formik.errors.checkbox);

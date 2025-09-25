@@ -21,29 +21,29 @@ function App() {
         <BrowserRouter>
           <Layout>
             <Routes>
-              <Route index element={<ProtectedRout role={'user'}>
+              <Route index element={<ProtectedRout role={['user',"admin"]}>
                 <Homepage />
               </ProtectedRout>} />
               <Route path="/login" element={<Loging />} />
               <Route path="/signup" element={<SignUp />} />
               <Route path="/forgettonpassword" element={<ForgettonPassword />} />
 
-              <Route path={`/utilisateurs`} element={<ProtectedRout role={'admin'}>
+              <Route path={`/utilisateurs`} element={<ProtectedRout role={['admin']}>
                 <Utilisateurs />
               </ProtectedRout>} />
 
-              <Route path={'/controle'} element={<ProtectedRout role={'admin'}>
+              <Route path={'/controle'} element={<ProtectedRout role={['admin']}>
                 <Controle />
               </ProtectedRout>} />
 
-              <Route path={'/coming'} element={<ProtectedRout role={'admin'}>
+              <Route path={'/coming'} element={<ProtectedRout role={['admin']}>
                 <Coming />
               </ProtectedRout>} />
 
-              <Route path={'/base'} element={<ProtectedRout role={'admin'}>
+              <Route path={'/base'} element={<ProtectedRout role={['admin']}>
                 <Base />
               </ProtectedRout>} />
-              <Route path="/utilisateurs/:id" element={<Edit/>}/>
+              <Route path="/utilisateurs/:id" element={<Edit />} />
             </Routes>
           </Layout>
         </BrowserRouter>

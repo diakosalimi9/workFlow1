@@ -18,24 +18,24 @@ export const users = [
     { id: 10, name: "uuuu", imgprofile: "/images/Ellipse.png", email: "uuuu@gmail.com", password: "uuuuuuu", numberphone: "09184445588", islogin: false, role: "user", smallname: 'uu', status: 'Actif', textcolor: 'text-[#9A3412]', bgstatus: 'bg-[#FFEDD5]' },
 ]
 
-export const paies = [
-    { Dragonfly: "Tortor.", CodeISO: "CMR", Description: "alexander.foley@gmail.com" },
-    { Dragonfly: "Gabon.", CodeISO: "GAB", Description: "alexander.foley@gmail.com" },
-    { Dragonfly: "Tojgfor.", CodeISO: "SSR", Description: "scdcdvc .foley@gmail.com" },
-    { Dragonfly: "Tortor.", CodeISO: "FFF", Description: "cccccc.foley@gmail.com" },
-    { Dragonfly: "Tortor.", CodeISO: "AAA", Description: "aaaaa.foley@gmail.com" },
-    { Dragonfly: "Tortor.", CodeISO: "VVV", Description: "jjjj.foley@gmail.com" },
-    { Dragonfly: "Tortor.", CodeISO: "FCV", Description: "ttttt.foley@gmail.com" },
-    { Dragonfly: "Tortor.", CodeISO: "UFC", Description: "hhhh.foley@gmail.com" },
-    { Dragonfly: "Tortor.", CodeISO: "KFC", Description: "ggggg.foley@gmail.com" },
-    { Dragonfly: "Tortor.", CodeISO: "WBC", Description: "fffff.foley@gmail.com" },
-    { Dragonfly: "Tortor.", CodeISO: "WEE", Description: "sssss.foley@gmail.com" },
-    { Dragonfly: "Tortor.", CodeISO: "WC", Description: "dddddd.foley@gmail.com" },
+export const pays = [
+    { id: 1, Dragonfly: "Tortor.", CodeISO: "CMR", Description: "alexander.foley@gmail.com" },
+    { id: 2, Dragonfly: "Gabon.", CodeISO: "GAB", Description: "alexander.foley@gmail.com" },
+    { id: 3, Dragonfly: "Tojgfor.", CodeISO: "SSR", Description: "scdcdvc .foley@gmail.com" },
+    { id: 4, Dragonfly: "Tortor.", CodeISO: "FFF", Description: "cccccc.foley@gmail.com" },
+    { id: 5, Dragonfly: "Tortor.", CodeISO: "AAA", Description: "aaaaa.foley@gmail.com" },
+    { id: 6, Dragonfly: "Tortor.", CodeISO: "VVV", Description: "jjjj.foley@gmail.com" },
+    { id: 7, Dragonfly: "Tortor.", CodeISO: "FCV", Description: "ttttt.foley@gmail.com" },
+    { id: 8, Dragonfly: "Tortor.", CodeISO: "UFC", Description: "hhhh.foley@gmail.com" },
+    { id: 9, Dragonfly: "Tortor.", CodeISO: "KFC", Description: "ggggg.foley@gmail.com" },
+    { id: 10, Dragonfly: "Tortor.", CodeISO: "WBC", Description: "fffff.foley@gmail.com" },
+    { id: 11, Dragonfly: "Tortor.", CodeISO: "WEE", Description: "sssss.foley@gmail.com" },
+    { id: 12, Dragonfly: "Tortor.", CodeISO: "WC", Description: "dddddd.foley@gmail.com" },
 
 ]
 
 export const methodes = [
-    { Dragonfly: "Tortor.", Description: "fffff.foley@gmail.com" },
-    { Dragonfly: "Tortor.", Description: "fffff.foley@gmail.com" },
-    { Dragonfly: "Tortor.", Description: "fffff.foley@gmail.com" },
+    { id: 1, Dragonfly: "Tortor.", Description: "fffff.foley@gmail.com" },
+    { id: 2, Dragonfly: "Tortor.", Description: "fffff.foley@gmail.com" },
+    { id: 3, Dragonfly: "Tortor.", Description: "fffff.foley@gmail.com" },
 ]

@@ -19,7 +19,7 @@ export default function SideBarArrayAll() {
         }
     }
     return (
-        <div className="h-screen fixed ">
+        <div className="h-full fixed ">
             <div>
                 <div className="bg-[#0E1B6B] w-56 flex justify-center items-center gap-3 h-[60px] ">
                     <div>
@@ -62,6 +62,11 @@ export default function SideBarArrayAll() {
                             </div>
                         </React.Fragment>
                     ))}
+                    <div className="w-full h-full p-2 flex items-end">
+                        <div className="w-full h-64 bg-black">
+
+                        </div>
+                    </div>
                 </div>
             </div>
 

@@ -1,36 +1,43 @@
 import ReactPaginate from "react-paginate";
-import { paies } from "../../../../Chore/Array/Array";
+import { pays } from "../../../../Chore/Array/Array";
 import Button from "../../atom/button/Button";
 import H1 from "../../atom/h1/H1";
 import Icon from "../../atom/icon/Icon";
 import Input from "../../atom/input/Input";
 import P from "../../atom/p/P";
 import Span from "../../atom/span/Span";
-import { useEffect, useState } from "react";
 import { useEdit } from "../../../../context/EditItemContext";
 import { useLocalStorage } from "../../../../hooks/useLocalStorage";
+import { useState } from "react";
 
 const array = ["Libellé", "Code ISO", "Description", "Actions"]
 export default function BaseCountries() {
+    const [pay, setPay] = useLocalStorage("pays", pays)
     const [itemOffset, setItemOffset] = useState(0);
     const itemsPerPage = 2
     const endOffset = itemOffset + itemsPerPage;
-    const currentItems = paies.slice(itemOffset, endOffset);
-    const pageCount = Math.ceil(paies.length / itemsPerPage);
+    const currentItems = pay.slice(itemOffset, endOffset);
+    const pageCount = Math.ceil(pay.length / itemsPerPage);
     const { modaleEdit, setModaleEdit } = useEdit()
-    const [pay, setPay] = useLocalStorage("pays", paies)
 
     const handlePageClick = (event) => {
-        const newOffset = (event.selected * itemsPerPage) % paies.length;
+        const newOffset = (event.selected * itemsPerPage) % pay.length;
         console.log(
             `User requested page number ${event.selected}, which is offset ${newOffset}`
         );
         setItemOffset(newOffset);
     };
+    function handlredeleteitem(id) {
 
-    function handlesetnewotem() {
-        setModaleEdit({fields: { Dragonfly: "nujggjhjfvll", CodeISO: null, Description: null }, title: "pays", isopen: true,})
-        console.log(modaleEdit);
+        const newlist = pay.filter((i) => i.id !== id)
+        console.log(newlist);
+
+        setPay(newlist)
+    }
+    function handlesetnewoitem(item) {
+        console.log({...item});
+
+        setModaleEdit({ fields: item ? { ...item } : { Dragonfly: "", CodeISO: '', Description: '', id: Date.now() }, title: "pays", isopen: true, })
 
     }
     return (
@@ -42,7 +49,7 @@ export default function BaseCountries() {
                 <div className="w-full flex justify-between items-center px-7">
                     <P className="font-InterRegular font-normal text-[18px]">Liste des pays</P>
 
-                    <Button onClick={() => handlesetnewotem()} className="bg-[#4763E4] text-white gap-2 p-[6px] rounded-[10px] flex items-center sv ">
+                    <Button onClick={() => handlesetnewoitem()} className="bg-[#4763E4] text-white gap-2 p-[6px] rounded-[10px] flex items-center sv ">
                         <Span>Ajouter</Span>
                         <Icon name="plusicon" />
                     </Button>
@@ -66,8 +73,8 @@ export default function BaseCountries() {
                                 <div className="flex-25%">{item.CodeISO}</div>
                                 <div className="flex-25%">{item.Description}</div>
                                 <div className="flex-25% flex gap-3 justify-center">
-                                    <Button className="px-6 py-1 text-[14px] font-InterMedium font-medium rounded-[10px] border border-[#5C73DB] text-[#5C73DB]">Modifier</Button>
-                                    <Button className="px-6 py-1 text-[14px] font-InterMedium font-medium rounded-[10px] bg-[#DC2626] text-white">Supprimer</Button>
+                                    <Button className="px-6 py-1 text-[14px] font-InterMedium font-medium rounded-[10px] border border-[#5C73DB] text-[#5C73DB]" onClick={() => handlesetnewoitem(item)}>Modifier</Button>
+                                    <Button className="px-6 py-1 text-[14px] font-InterMedium font-medium rounded-[10px] bg-[#DC2626] text-white" onClick={() => handlredeleteitem(item.id)}>Supprimer</Button>
                                 </div>
                             </div>
                         ))}
@@ -76,7 +83,7 @@ export default function BaseCountries() {
 
                     <div className="flex justify-between w-full items-center pl-5 pt-10 pr-16">
                         <div className="font-InterRegular font-normal text-[16px] text-[#4763E4]">
-                            {paies.length} pays
+                            {pay.length} pays
                         </div>
 
                         <ReactPaginate
